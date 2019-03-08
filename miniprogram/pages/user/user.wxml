@@ -1,0 +1,61 @@
+<!--pages/user/user.wxml-->
+<view class='mymain'>
+  <view class='header'>
+  </view>
+  <view class='qs'>
+    <view class="container">
+      <view class='container_head'>
+        <view class='container_head_top'>
+         <picker mode='date' value='{{date}}' bindchange='bindDateChange' fields='year' end='2019'>
+    <view class='prev'>
+      <text>{{date}}</text>
+    </view>
+    </picker>
+    <view class='center'>
+      {{date}}年账单
+    </view>
+        </view>
+        <view class='container_head_main'>
+          <view>
+            <view class='main_Ttitle'>总支出</view>
+            <view class='main_main'>{{pay}}</view>
+            <view class='main_mintitle'>元</view>
+          </view>
+          <view>
+            <view class='main_Ttitle'>平均支出</view>
+            <view class='main_main'>{{avegPay}}</view>
+            <view class='main_mintitle'>元</view>
+          </view>
+           <view>
+            <view class='main_Ttitle'>总收入</view>
+            <view class='main_main'>{{income}}</view>
+            <view class='main_mintitle'>元</view>
+          </view>
+           <view>
+            <view class='main_Ttitle'>平均收入</view>
+            <view class='main_main'>{{avegIncome}}</view>
+            <view class='main_mintitle'>元</view>
+          </view>
+        </view>
+      </view>
+        <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+     
+    <view class='box'>
+        <view class='box-header'>
+          <view>月份</view>
+          <view>收入</view>
+          <view>支出</view>
+          <view>结余</view>   
+        </view>
+        <view class='box-sec' wx:for='{{arr}}' wx:key='v' wx:for-item='v' wx-if='{{arr.length != 0}}'>
+          <view>{{v.month}}月</view>
+          <view>{{v.income}}</view>
+          <view>{{v.pay}}</view>
+          <view>{{v.income + v.pay}}</view>   
+        </view>
+        <view class='box-sec2' wx-if='{{arr.length == 0}}'>暂无数据</view>
+      </view>
+    </view>
+  </view>
+</view>
+

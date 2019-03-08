@@ -1,0 +1,114 @@
+
+<view class='header'>
+  <button data-index='0' class='btn1 {{isActive==0?"active":""}}' bindtap='changeBtn'>支出</button>
+  <button data-index='1' class='btn1 {{isActive==0?"":"active"}}' bindtap='changeBtn'>收入</button>
+</view>
+
+<view wx:if='{{isActive==0?true:false}}'>
+<!-- 支出类型列表 -->
+<view class='nav-main'>
+    <view class='nav-block'>
+      <swiper indicator-dots="true" indicator-active-color="#f8de6f" style='height: 400rpx;'>
+        <block wx:for="{{icons}}" wx:for-item="i"  wx:key='index' wx:for-index="index">
+          <swiper-item>
+            <view class='nav-m'>
+              <view class='nav' wx:for="{{i}}"  wx:for-item="j" wx:for-index="index2" wx:key='index2' bindtap='changeList' 
+              data-info='{{j.title}}' 
+              data-index='{{index}}' 
+              data-index2='{{index2}}'>    
+                <image src="{{isChoose===index + '' +index2?j.icon:j.icon2}}" 
+                data-info='{{j.title}}'
+                data-index='{{index}}' 
+                data-index2='{{index2}}'>
+                </image>
+                <text 
+                data-info='{{j.title}}'
+                 data-index='{{index}}' 
+                 data-index2='{{index2}}'>{{j.title}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+
+ <view class='box-sec1'>
+  </view>
+  <view id='sec1'>
+  <!-- 日期 -->
+  <picker mode ="date"  
+     bindchange="bindDateChange" value='{{time}}' >
+      <view class='sec1-left'>{{time}}</view>
+  </picker>
+  <!-- 金额 -->
+    <view class='sec1-right'><input value='{{money}}' bindinput='inputChange' placeholder-class='moneyClass' placeholder='0.00' type='digit'>{{money}}</input></view>
+  </view>
+
+  <!-- 备注 -->
+  <view class='sec2'>
+    <input value='{{msg}}' bindinput='btn2Change' placeholder-class='moneyClass' class='input' placeholder='备注'></input>
+  </view>
+
+  <view>
+  <!-- 发送请求 -->
+  <button class='btn2' bindtap='add'>保存</button>
+  </view>
+</view>
+
+<view wx:else>
+
+<view class='nav-main'>
+    <view class='nav-block'>
+      <swiper indicator-dots="true" indicator-active-color="#f8de6f" style='height: 400rpx;'>
+        <block wx:for="{{icons2}}" wx:key='index'  wx:for-item="i" wx:for-index="index">
+          <swiper-item>
+            <view class='nav-m'>
+              <view class='nav' wx:for="{{i}}"  wx:key='index2'  wx:for-item="j" wx:for-index="index2" bindtap='changeList' 
+              data-info='{{j.title}}' 
+              data-index='{{index}}' 
+              data-index2='{{index2}}' >    
+                <image src="{{isChoose===index + '' +index2?j.icon:j.icon2}}" 
+                data-info='{{j.title}}'
+                data-index='{{index}}' 
+                data-index2='{{index2}}'>
+                </image>
+                <text 
+                data-info='{{j.title}}'
+                 data-index='{{index}}' 
+                 data-index2='{{index2}}'>{{j.title}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+
+ <view class='box-sec1'>
+  </view>
+  <view id='sec1'>
+  <!-- 日期 -->
+  <picker mode ="date"  
+    bindchange="bindDateChange" value='{{time}}' >
+      <view class='sec1-left'>{{time}}</view>
+  </picker>
+  <!-- 金额 -->
+    <view class='sec1-right'><input value='{{money}}' bindinput='inputChange' placeholder-class='moneyClass' placeholder='0.00' type='digit'>{{money}}</input></view>
+  </view>
+
+  <!-- 备注 -->
+  <view class='sec2'>
+    <input value='{{msg}}' bindinput='btn2Change' placeholder-class='moneyClass' class='input' placeholder='备注'></input>
+  </view>
+
+  <view>
+  <!-- 发送请求 -->
+  <button class='btn2' bindtap='add'>保存</button>
+  </view>
+</view>
+
+
+

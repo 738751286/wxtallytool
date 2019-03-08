@@ -1,0 +1,120 @@
+.header{
+  display: flex;
+  height: 80rpx;
+  background: #f8de6f;
+  width: 100%;
+}
+.btn1{
+  width: 250rpx;
+  height: 60rpx;
+  color: #000;
+  background: #f8de6f;
+  border: 2rpx solid #000;
+  border-radius: 8rpx;
+  line-height: 60rpx;
+}
+.btn1.active{
+  background: #000;
+  color: #f8de6f;
+}
+.moneyClass{
+  color: #515151;
+}
+#box{
+  height: 200rpx;
+  width: calc(100% - 20rpx);
+  padding: 0 10rpx;
+  
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-around ;
+}
+.box-sec1{
+  height: 30rpx;
+  border-bottom: 1rpx solid #ccc; 
+}
+.box text{
+  background: #f8de6f;
+  height: 70rpx;
+  width: 80rpx;
+  display: inline-block;
+  border-radius: 4rpx; 
+  margin: 30rpx 20rpx 0;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+.box text.choose{
+  background: red;
+
+}
+#sec1{
+  display: flex;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ccc; 
+  padding: 0 30rpx;
+}
+.sec1-left{
+  flex: 2;
+  line-height: 80rpx;
+  color: #515151;
+}
+.sec1-right{
+  flex: 1;
+
+  margin: 10rpx 0 0 0;
+}
+.sec1-right input{
+  line-height: 80rpx;
+  background: #fff;
+  float: right;
+  text-align: right;
+  width: 200rpx;
+  
+}
+.sec2{
+  height: 80rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #ccc; 
+}
+.sec2 input{
+  height: 100%;
+  line-height: 80rpx;
+   background: #fff;
+}
+
+.btn2{
+  margin: 20rpx auto;
+  height: 88rpx;
+  width: 188rpx;
+  background: #f8de6f;
+}
+
+
+.nav-block{
+  width:100%;
+  font-size:28rpx;
+  margin:20rpx auto;
+  background: #fff
+}
+.nav-m{
+  width:100%;
+}
+.nav{
+  width:25%;
+  margin:16rpx auto;
+  text-align: center;
+  display: inline-block;
+  
+}
+.nav image{
+  display:inline-block;
+  width:32px;
+  height:32px;
+}
+.nav text{
+  display:block;
+  font-size: 28rpx;
+  color: #212121;
+}

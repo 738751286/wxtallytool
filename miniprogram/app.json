@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Detailed/Detailed",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundColor": "#f8de6f",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8de6f",
+    "navigationBarTitleText": "记账本",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#f8de6f",
+    
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "记录",
+      "iconPath": "images/jilu.png",
+      "selectedIconPath": "images/jilu1.png"
+    },
+      {
+        "pagePath": "pages/Detailed/Detailed",
+        "text": "明细",
+        "iconPath": "images/xiangqing.png",
+        "selectedIconPath": "images/xiangqing1.png"
+      },
+        {
+          "pagePath": "pages/user/user",
+          "text": "统计",
+          "iconPath": "images/tongji.png",
+          "selectedIconPath": "images/tongji1.png"
+        }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+<!--pages/Detailed/Detailed.wxml-->
+<view class='header'>
+  <picker mode = 'date' fields='month' class='time' bindchange='bindDateChange' value='{{time}}'>
+  <view class='year'>{{year}}年</view>
+  <view class='month'>{{month}}月</view>
+  </picker>
+
+  <view class='h-center'>
+    <view>月支出(元)</view>
+    <view class='month month2'>{{pay}}</view>
+  </view>
+  <view class='h-right'>
+    <view>月收入(元)</view>
+    <view class='month month2'>{{income}}</view>
+  </view>
+</view>
+<!-- 盒子 -->
+<view id='box' catchtouchmove="aaa">
+
+<!-- 使用双层循环渲染数据 -->
+<view class='sec' wx:for='{{arrLength}}' wx:key='ind' wx:for-item='it' wx:for-index='ind' wx-if='{{arrLength.length  != 0}}'>
+  <view class='sec-header' >
+    <view class='sec-left' >
+      <text>{{it.day}}日 </text><text>{{it.weekDay}}</text>
+    </view>
+    <!-- <view class='sec-right'  >
+      <text>支出:s}</text> <text>收入:55</text>
+    </view> -->
+  </view>
+  <view class='sec-box'>
+    <view class='sec-list' style='height:100rpx ' wx:for='{{arr}}' wx:key='in' wx:for-item='ita' wx:for-index='in' wx:if='{{it.data == ita.data}}'>
+     <!-- <view class='remake'>编辑</view> -->
+     <view class='remake' data-index='{{in}}' bindtap='reMake'>编辑</view>
+
+     <view class='sec-list-2' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{ita.txtStyle}}" data-index='{{in}}'>
+      <image src='../../images/left.png' class='rl'></image>
+      <image src="{{ita.iconPath}}"></image>
+      <view>{{ita.title}}</view>
+      <view bindtap='touchMsg' data-index='{{in}}'>{{ita.msg}}</view>
+      <view wx:if='{{ita.type == 1}}' >+{{ita.money}}</view>
+      <view wx:else>-{{ita.money}}</view>
+      <image src='../../images/right.png' class='rl'></image>
+     </view>
+    <view class='del' data-index='{{in}}' bindtap='delItem'>删除</view>
+    </view>
+  </view>
+</view>
+</view>
+<view wx-if='{{arrLength.length  == 0}}' class='sec2'>没有数据</view>

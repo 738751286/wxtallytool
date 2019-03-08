@@ -1,0 +1,140 @@
+/* pages/Detailed/Detailed.wxss */
+.header{
+  height: 240rpx;
+  background:  #f8de6f;
+  display: flex;
+}
+.time{
+  /* background: red; */
+  width: 200rpx;
+  height: 100%;
+  line-height: 100%;
+  flex: 1;
+}
+.h-center,.h-right{
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  line-height: 50rpx;
+}
+.year{
+  /* color: #fff; */
+  height: 50rpx;
+  font-size: 16px;
+  line-height: 50rpx;
+  text-align: center;
+  /* border: 1px solid red; */
+  border-right: 1px dashed #fff;
+}
+.month{
+  /* border: 1px solid red; */
+  font-size: 30px;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  border-right: 1px dashed #fff;
+}
+.month2{
+  font-size: 22px;
+  border: none;
+}
+
+view{
+  box-sizing: border-box;
+}
+.sec-header{
+  display: flex;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f5f5f53f;
+  color: #9a9a9a;
+  /* position: absolute;
+  top: 0; */
+}
+.sec-left{
+  flex: 1;
+}
+.sec-right{
+  flex: 2;
+  text-align: right;
+}
+.sec-right text:nth-of-type(1),.sec-left text:nth-of-type(1){
+  margin-right: 15rpx; 
+}
+.sec-box{
+  width: 100%;
+}
+.sec-list-2{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  line-height: 100rpx;
+  /* padding: 0 20rpx; */
+  position: absolute;
+  background: #fff;
+  border-bottom:1rpx solid #d9d9d9; 
+  top: 0;
+  z-index: 6;
+}
+.sec-list-2 image{
+  height: 64rpx;
+  width: 64rpx;
+  margin: 18rpx 0;
+
+}
+.sec-list-2 view{
+  flex: 1;
+  font-size: 30rpx;
+  color: #3b3b3b;
+
+}
+.sec-list-2 view:nth-of-type(2){
+  text-align: left;
+  flex: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sec-list-2 view:nth-of-type(3){
+  text-align: right;
+  font-size: 28rpx;
+  color: #9a9a9a;
+}
+.sec2{
+  text-align: center;
+  margin:  100rpx 0 0 0;
+  color: #9a9a9a;
+}
+.sec-list{
+  position: relative;
+  /* border: 1px solid red; */
+}
+.del{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100rpx;
+  width: 180rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #e64340;
+  color: #fff;
+  z-index: 4;
+}
+.remake{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100rpx;
+  width: 180rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: skyblue;
+  color: #fff;
+  z-index: 3;
+}
+.sec-list-2 .rl{
+  width: 30rpx;
+}
